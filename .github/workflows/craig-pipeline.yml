@@ -11,10 +11,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-maven-app:
-
+  build-maven-app:  
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 17
@@ -27,6 +25,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
   build-container-and-tag:
+    needs: build-maven-app
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
