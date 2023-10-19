@@ -2,9 +2,12 @@
 
 FROM eclipse-temurin:17-jdk-jammy
 
-RUN mkdir /usr/src/spring-petclinic
-COPY . /usr/src/spring-petclinic
-WORKDIR /usr/src/spring-petclinic
+WORKDIR /app
 
-RUN java -jar target/*.jar
-EXPOSE 8080
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
+RUN ./mvnw dependency:resolve
+
+COPY src ./src
+
+CMD ["./mvnw", "spring-boot:run"]
