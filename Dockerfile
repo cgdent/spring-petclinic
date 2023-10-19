@@ -8,6 +8,6 @@ WORKDIR /app
 # COPY mvnw pom.xml ./
 # RUN ./mvnw dependency:resolve
 
-COPY target ./
+COPY target/ target
 
 CMD ["java", "-jar", "./target/*.jar"]
