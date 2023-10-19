@@ -2,7 +2,9 @@
 
 
 ## PetClinic Application Overview
-Petclinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) . A GitHub action called craig-pipleine.yaml is triggered whenever a change is committed on the main branch. The GitHub Action will create a Ubuntu runner to run a Maven build with dependency resolution through Maven Central. This will create compiled code in the /target folder. The second stage of the GitHub Action will build a Java docker container with the target files and push the built image to a JFrog Artifactory docker registry. The image will be tagged as cgdent.jfrog.io/docker/docker-spring-petclinic with the GitHub Actions run number as the version.
+PetClinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) . A GitHub action called craig-pipleine.yaml is triggered whenever a change is committed on the main branch. The GitHub Action will create a Ubuntu runner to run a Maven build with dependency resolution through Maven Central. This will create compiled code in the **/target** folder.
+
+The second stage of the GitHub Action will build a Java docker container with the target files and push the built image to a JFrog Artifactory docker registry. The image will be tagged as **cgdent.jfrog.io/docker/docker-spring-petclinic** with the GitHub Actions run number as the version.
 
 
 ## Running PetClinic locally
@@ -14,8 +16,11 @@ docker tag cgdent.jfrog.io/docker/docker-spring-petclinic:21 docker-spring-petcl
 docker run -d -p 8080:8080 docker-spring-petclinic:latest
 ```
 
-You can then access petclinic at http://localhost:8080/
+You can then access PetClinic at http://localhost:8080/
+<pre>
 
+  
+</pre>
 <img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
 
 
@@ -27,12 +32,6 @@ and it is possible to inspect the content of the database using the `jdbc:h2:mem
 
 
 ```
-
-## Test Applications
-
-At development time we recommend you use the test applications set up as `main()` methods in `PetClinicIntegrationTests` (using the default H2 database and also adding Spring Boot devtools), `MySqlTestApplication` and `PostgresIntegrationTests`. These are set up so that you can run the apps in your IDE and get fast feedback, and also run the same classes as integration tests against the respective database. The MySql integration tests use Testcontainers to start the database in a Docker container, and the Postgres tests use Docker Compose to do the same thing.
-
-
 # License
 
 The Spring PetClinic sample application is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
@@ -47,3 +46,4 @@ The Spring PetClinic sample application is released under version 2.0 of the [Ap
 [spring-petclinic-graphql]: https://github.com/spring-petclinic/spring-petclinic-graphql
 [spring-petclinic-kotlin]: https://github.com/spring-petclinic/spring-petclinic-kotlin
 [spring-petclinic-rest]: https://github.com/spring-petclinic/spring-petclinic-rest
+```
