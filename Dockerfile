@@ -10,4 +10,4 @@ WORKDIR /app
 
 COPY target ./target
 
-CMD ["java", "-jar", "./target/*.jar"]
+# CMD ["java", "-jar", "./target/*.jar"]
