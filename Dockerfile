@@ -9,5 +9,5 @@ WORKDIR /app
 # RUN ./mvnw dependency:resolve
 
 COPY target ./target
-
+CMD ["bash"]
 # CMD ["java", "-jar", "./target/*.jar"]
