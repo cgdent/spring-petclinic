@@ -11,7 +11,7 @@ The second stage of the GitHub Action will build a Java docker container with th
 You can pull the current stable container image from Artifactory and run it locally using the following commands:
 
 ```
-docker pull cgdent.jfrog.io/docker/docker-spring-petclinic:20
+docker pull cgdent.jfrog.io/docker/docker-spring-petclinic:21
 docker tag cgdent.jfrog.io/docker/docker-spring-petclinic:21 docker-spring-petclinic:latest
 docker run -d -p 8080:8080 docker-spring-petclinic:latest
 ```
