@@ -2,7 +2,7 @@
 
 
 ## PetClinic Application Overview
-PetClinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) . A GitHub action called craig-pipleine.yaml is triggered whenever a change is committed on the main branch. The GitHub Action will create a Ubuntu runner to run a Maven build with dependency resolution through Maven Central. This will create compiled code in the **/target** folder.
+PetClinic is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built using [Maven](https://spring.io/guides/gs/maven/) . A GitHub action called craig-pipeline.yaml is triggered whenever a change is committed on the main branch. The GitHub Action will create a Ubuntu runner to run a Maven build with dependency resolution through Maven Central. This will create compiled code in the **/target** folder.
 
 The second stage of the GitHub Action will build a Java docker container with the target files and push the built image to a JFrog Artifactory docker registry. The image will be tagged as **cgdent.jfrog.io/docker/docker-spring-petclinic** with the GitHub Actions run number as the version.
 
